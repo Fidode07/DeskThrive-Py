@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DeskThrive - Your PC in a new style</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/wallpaper.css" type="text/css">
+    <!-- CNDs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-9">
+            <h1 class="logo">DeskThrive</h1>
+            <div class="logo__glow"></div>
+        </div>
+        <div id="main-container" class="col-lg-12 main-container">
+            <div class="main__header">
+                <!-- Search bar and "Create Wallpaper" button -->
+                <div class="main__header__search">
+                    <div class="main__header__search__input">
+                        <label>
+                            <input class="search" type="text" placeholder="Search">
+                        </label>
+                    </div>
+                    <div class="main__header__search__button">
+                        <button class="btn btn-primary create" data-bs-toggle="modal" href="#createWallpaperModal">
+                            Create Wallpaper
+                        </button>
+                    </div>
+                </div>
+                <div class="main__header__nav-menu">
+                    <!-- Random Wallpaper, Monitor Settings -->
+                    <div class="nav-menu__item">
+                        <a href="#" class="nav-menu__item__link">Random Wallpaper</a>
+                    </div>
+                    <div class="nav-menu__item">
+                        <a href="#" class="nav-menu__item__link">Monitor Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="splitter"></div>
+            <div class="main__content">
+                <!-- List of all Wallpapers -->
+                <div class="container-xl">
+                    <div class="row" id="wallpaper_list"></div>
+                </div>
+            </div>
+        </div>
+        <div id="paper-sidebar" style="display: none;"
+             class="col-lg-3 offset-9 px-1 position-fixed wallpaper-container">
+            <div class="wallpaper-sidebar">
+                <div class="wallpaper-sidebar__background">
+                    <img alt="Wallpaper" id="current_wallpaper_background"
+                         src="https://moewalls.com/wp-content/uploads/2022/04/purple-sky-thumb.jpg"/>
+                </div>
+                <div class="wallpaper-sidebar__content">
+                    <div class="wallpaper-sidebar__logo">
+                        <img id="current_wallpaper_thumbnail" class="wallpaper-sidebar__logo" alt="Wallpaper"
+                             src="https://moewalls.com/wp-content/uploads/2022/04/purple-sky-thumb.jpg"/>
+                    </div>
+                    <h1 class="wallpaper-sidebar__title" id="current_wallpaper_title">
+                        Purple Sky Live Wallpaper - 4K
+                    </h1>
+                    <div class="wallpaper-sidebar__functions">
+                        <!-- Apply Button, Edit Button, Delete Button -->
+                        <div class="function wallpaper-sidebar__functions__apply">
+                            <button class="btn btn-success btn-block">Apply</button>
+                        </div>
+                        <div class="function wallpaper-sidebar__functions__edit">
+                            <button class="btn btn-primary btn-block">Edit</button>
+                        </div>
+                    </div>
+                    <div class="wallpaper-sidebar__styles">
+                        <!-- Brightness, Contrast, Saturation, Hue-Rotate, Blur, Grayscale, Invert, Sepia -->
+                        <h1 class="wallpaper-sidebar__styles__title">Styles</h1>
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="brightness" class="style__heading">Brightness: <span
+                                        id="brightness-val">100</span>%</label><br>
+                                <input type="range" min="0" max="1000" value="70" class="slider" id="brightness">
+                            </div>
+                        </div>
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="contrast" class="style__heading">Contrast: <span id="contrast-val">70</span>%</label><br>
+                                <input type="range" min="0" max="1000" value="100" class="slider" id="contrast">
+                            </div>
+                        </div>
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="saturation" class="style__heading">Saturation: <span
+                                        id="saturation-val">70</span>%</label><br>
+                                <input type="range" min="0" max="100" value="70" class="slider" id="saturation">
+                            </div>
+                        </div>
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="hue-rotate" class="style__heading">Hue-Rotate: <span
+                                        id="hue-rotate-val">40</span>deg</label><br>
+                                <input type="range" min="0" max="360" value="40" class="slider" id="hue-rotate">
+                            </div>
+                        </div>
+
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="blur" class="style__heading">Blur: <span
+                                        id="blur-val">0</span>px</label><br>
+                                <input type="range" min="0" max="250" value="0" class="slider" id="blur">
+                            </div>
+                        </div>
+
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="grayscale" class="style__heading">Grayscale: <span
+                                        id="grayscale-val">0</span>%</label><br>
+                                <input type="range" min="0" max="100" value="0" class="slider" id="grayscale">
+                            </div>
+                        </div>
+
+                        <div class="style">
+                            <div class="style__slider">
+                                <label for="sepia" class="style__heading">Sepia: <span
+                                        id="sepia-val">0</span>%</label><br>
+                                <input type="range" min="0" max="100" value="0" class="slider" id="sepia">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="wallpaper-sidebar__functions">
+                        <div class="function wallpaper-sidebar__functions__delete">
+                            <button class="btn btn-danger btn-block">Delete</button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="createWallpaperModal" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Wallpaper</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="option">
+                    <label for="wallpaperName" class="form-label">Wallpaper Name</label>
+                    <input type="text" class="form-control" id="wallpaperName" placeholder="Wallpaper Name">
+                </div>
+
+                <div class="option">
+                    <label for="wallpaperPath" class="form-label">Wallpaper Path</label>
+                    <div class="path-inputs">
+                        <input type="text" class="form-control" id="wallpaperPath" placeholder="Wallpaper Path">
+                        <button class="btn btn-primary">Browse</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-primary">Create</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- JS -->
+<script async src="js/bootstrap.min.js"></script>
+<script src="js/ui-helper.js"></script>
+<script>
+    const uiHelper = new UiHelper();
+    uiHelper.addWallpaper('Purple Sky Live Wallpaper - 4K', 'https://moewalls.com/wp-content/uploads/2022/04/purple-sky-thumb.jpg', 1);
+    uiHelper.addWallpaper('Cyberpunk 2077 - 4k', 'https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/ss_526123764d1c628caa1eb62c596f1b732f416c8c.1920x1080.jpg?t=1688382273', 2);
+    uiHelper.addWallpaper('Retro Live Wallpaper 2023 - 4K Ultra HD', 'https://img.freepik.com/fotos-premium/retro-futuristische-rueckseitenansicht-supersportwagen-der-80er-jahre-auf-trendigem-synthwave-vaporwave-cyberpunk-sonnenuntergangshintergrund-generative-ki_692702-15013.jpg?w=2000', 3);
+    // Prevent bug which causes the wallpapers to be cut off
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+</script>
+</body>
+</html>

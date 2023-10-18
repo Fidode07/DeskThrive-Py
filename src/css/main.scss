@@ -1,0 +1,217 @@
+@import "vars";
+
+
+body {
+  background: $primary;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  line-height: $line-height;
+  font-size: $font-size;
+  color: white;
+  word-break: break-word;
+  border-radius: $border-radius !important;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  .logo {
+    position: fixed;
+
+    /* center */
+    top: 50%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    color: $secondary3;
+    filter: blur(4px);
+    background: transparent;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2%;
+    text-shadow: 0 0 10px rgba($secondary3, .5);
+  }
+
+  .logo__glow {
+    position: fixed;
+    top: 50%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 1000px $secondary3;
+    background: rgba($secondary3, .07);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  * {
+    transition: $transition-time;
+  }
+}
+
+* .btn {
+  border-radius: $border-radius !important;
+}
+
+.splitter {
+  width: 98%;
+  border: none;
+  margin: 2% auto 1% auto;
+  text-align: center;
+  background: transparent;
+  border-bottom: 1px solid gray;
+}
+
+.main-container {
+  .main__header {
+    .main__header__search {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      margin-top: 2%;
+      background: transparent;
+
+      .border {
+        border: 1px solid $secondary3;
+        border-radius: $border-radius !important;
+      }
+
+      .main__header__search__button {
+        width: 20%;
+
+        .create {
+          @extend .border;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+          width: 100%;
+          padding: 11px 0;
+          border-color: $secondary2;
+          background: $secondary2;
+          color: white;
+          font-size: 1.15rem;
+          outline: none;
+          height: calc(100% + 40px);
+        }
+      }
+
+      .main__header__search__input {
+        width: 80%;
+
+        label {
+          width: 98%;
+        }
+
+        .search {
+          @extend .border;
+          width: 100%;
+          padding: 10px;
+          background: #131313;
+          color: white;
+          box-shadow: 0 0 20px rgba($secondary2, .1);
+          font-size: 1.2rem;
+          outline: none;
+        }
+      }
+    }
+
+    .main__header__nav-menu {
+      width: 100%;
+      display: flex;
+      padding: 10px 20px;
+
+      .nav-menu__item {
+        & + .nav-menu__item {
+          margin-left: 10px;
+        }
+
+        padding: 10px 20px;
+        border-radius: $border-radius;
+        background: $secondary2;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        font-size: 1.15rem;
+        outline: none;
+        height: calc(100% + 40px);
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: rgba($secondary3, .5);
+        }
+
+        .nav-menu__item__link {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .main__content {
+    .row-splitter {
+      margin-top: 2%;
+    }
+
+    .card {
+      z-index: 1;
+      background: transparent;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+      height: 170px;
+      margin-top: 10%;
+
+      .card__content {
+        .card__content__title {
+          font-size: 1.2rem;
+          text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+          color: white;
+        }
+
+        z-index: 3;
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px;
+        position: absolute;
+        top: 28%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .card__background {
+        filter: brightness(.5);
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .main-container {
+    margin-left: 0;
+  }
+
+  .sidebar-container {
+    position: relative !important;
+  }
+
+  .logo, .logo__glow {
+    left: 50% !important;
+  }
+}

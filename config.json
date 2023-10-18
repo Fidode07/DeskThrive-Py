@@ -1,0 +1,9 @@
+{
+    "host": "0.0.0.0",
+    "q_host": "localhost",
+    "port": 2030,
+    "ui_title": "DeskThrive",
+    "ui_width": 1200,
+    "ui_height": 700,
+    "icon_path": "src/img/DeskThriveIcon.png"
+}

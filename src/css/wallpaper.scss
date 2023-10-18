@@ -1,0 +1,211 @@
+@import "vars";
+
+
+.wallpaper-container {
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  height: 100vh;
+  z-index: 0;
+  background: $primary;
+
+  .wallpaper-sidebar {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    .wallpaper-sidebar__background {
+      z-index: 1;
+
+      img {
+        position: absolute;
+        top: 0;
+        margin-top: 0;
+        filter: blur(2px) brightness(.6);
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .wallpaper-sidebar__content {
+      z-index: 2;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin: 8% auto 0 auto;
+
+      .wallpaper-sidebar__logo {
+        text-align: center;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .wallpaper-sidebar__title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 2%;
+        text-align: center;
+        padding: 10px 20px;
+        color: white;
+        text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+      }
+
+      .wallpaper-sidebar__functions {
+        margin-top: 10%;
+        text-align: center;
+
+        .function button {
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          border-radius: $border-radius;
+          font-size: 1.2rem;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+          outline: none;
+          width: 90%;
+        }
+
+        .function + .function {
+          margin-top: 15px;
+        }
+      }
+
+      .wallpaper-sidebar__styles {
+        text-align: left;
+        padding: 10px 20px;
+        width: 95%;
+        position: relative;
+        background: rgba(0, 0, 0, .5);
+        border-radius: $border-radius;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        margin: 8% auto 3% auto;
+
+        .wallpaper-sidebar__styles__title {
+          font-size: 2rem;
+          text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+          font-weight: bold;
+        }
+
+        .style {
+          width: 100%;
+          margin: 0 auto;
+
+          & + .style {
+            margin-top: 5px;
+          }
+
+          .style__slider input {
+            width: 100%;
+            margin: 0 auto;
+            -webkit-appearance: none;
+            height: $slider-height;
+            border-radius: 5px;
+            background: $secondary-bright;
+            outline: none;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: calc(#{$slider-height} + 5px);
+              height: calc(#{$slider-height} + 5px);
+              border-radius: 50%;
+              background: $secondary2;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+
+  .modal-content {
+    border-radius: $border-radius;
+    background: $secondary;
+
+    .modal-header {
+      border-bottom: 1px solid $secondary2;
+    }
+
+    .modal-body {
+      border-bottom: 1px solid $secondary2;
+
+      .option {
+
+        input {
+          border-radius: $border-radius;
+          border: none;
+          background: $secondary-bright;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+          caret-color: $secondary3;
+          color: white !important;
+
+          &::placeholder {
+            color: gray;
+          }
+        }
+
+        & + .option {
+          margin-top: 15px;
+        }
+      }
+
+      .path-inputs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          width: 80%;
+        }
+
+        button {
+          width: 19%;
+          border-radius: $border-radius;
+          border: none;
+          background: $secondary2;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+          caret-color: $secondary3;
+          color: white !important;
+        }
+      }
+    }
+
+    .modal-footer {
+      border-top: none;
+    }
+  }
+
+  .btn-close {
+    color: white !important;
+
+    &:focus {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .wallpaper-container {
+    margin-left: 0;
+    position: relative !important;
+  }
+}

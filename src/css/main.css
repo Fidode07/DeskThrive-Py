@@ -1,0 +1,186 @@
+/* dark dark gray and blue theme /*
+ */
+body {
+  background: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: white;
+  word-break: break-word;
+  border-radius: 5px !important;
+}
+body::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+body .logo {
+  position: fixed;
+  /* center */
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  color: #00a0e9;
+  filter: blur(4px);
+  background: transparent;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2%;
+  text-shadow: 0 0 10px rgba(0, 160, 233, 0.5);
+}
+body .logo__glow {
+  position: fixed;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 1000px #00a0e9;
+  background: rgba(0, 160, 233, 0.07);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+body * {
+  transition: 0.4s;
+}
+
+* .btn {
+  border-radius: 5px !important;
+}
+
+.splitter {
+  width: 98%;
+  border: none;
+  margin: 2% auto 1% auto;
+  text-align: center;
+  background: transparent;
+  border-bottom: 1px solid gray;
+}
+
+.main-container .main__header .main__header__search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 2%;
+  background: transparent;
+}
+.main-container .main__header .main__header__search .border, .main-container .main__header .main__header__search .main__header__search__input .search, .main-container .main__header .main__header__search .main__header__search__button .create {
+  border: 1px solid #00a0e9;
+  border-radius: 5px !important;
+}
+.main-container .main__header .main__header__search .main__header__search__button {
+  width: 20%;
+}
+.main-container .main__header .main__header__search .main__header__search__button .create {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 11px 0;
+  border-color: #0076c7;
+  background: #0076c7;
+  color: white;
+  font-size: 1.15rem;
+  outline: none;
+  height: calc(100% + 40px);
+}
+.main-container .main__header .main__header__search .main__header__search__input {
+  width: 80%;
+}
+.main-container .main__header .main__header__search .main__header__search__input label {
+  width: 98%;
+}
+.main-container .main__header .main__header__search .main__header__search__input .search {
+  width: 100%;
+  padding: 10px;
+  background: #131313;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 118, 199, 0.1);
+  font-size: 1.2rem;
+  outline: none;
+}
+.main-container .main__header .main__header__nav-menu {
+  width: 100%;
+  display: flex;
+  padding: 10px 20px;
+}
+.main-container .main__header .main__header__nav-menu .nav-menu__item {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #0076c7;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-size: 1.15rem;
+  outline: none;
+  height: calc(100% + 40px);
+  border: none;
+  cursor: pointer;
+}
+.main-container .main__header .main__header__nav-menu .nav-menu__item + .nav-menu__item {
+  margin-left: 10px;
+}
+.main-container .main__header .main__header__nav-menu .nav-menu__item:hover {
+  background: rgba(0, 160, 233, 0.5);
+}
+.main-container .main__header .main__header__nav-menu .nav-menu__item .nav-menu__item__link {
+  color: white;
+  text-decoration: none;
+}
+.main-container .main__content .row-splitter {
+  margin-top: 2%;
+}
+.main-container .main__content .card {
+  z-index: 1;
+  background: transparent;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 170px;
+  margin-top: 10%;
+}
+.main-container .main__content .card .card__content {
+  z-index: 3;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  position: absolute;
+  top: 28%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.main-container .main__content .card .card__content .card__content__title {
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.main-container .main__content .card .card__background {
+  filter: brightness(0.5);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.main-container .main__content .card .card__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 991px) {
+  .main-container {
+    margin-left: 0;
+  }
+  .sidebar-container {
+    position: relative !important;
+  }
+  .logo, .logo__glow {
+    left: 50% !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
